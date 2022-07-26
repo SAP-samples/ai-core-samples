@@ -24,7 +24,7 @@ Please edit this file as it is the primary description file for your project. Yo
 
 ## Requirements
 
-## Download and Installation
+
 
 ## Known Issues
 <!-- You may simply state "No known issues. -->
