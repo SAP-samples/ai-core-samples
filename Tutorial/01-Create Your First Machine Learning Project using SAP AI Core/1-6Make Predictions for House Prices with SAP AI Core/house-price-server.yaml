@@ -1,0 +1,50 @@
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingTemplate
+metadata:
+  name: server-pipeline # executable ID, must be unique across your SAP AI Core instance, for example use `server-pipeline-yourname-1234`
+  annotations:  
+    scenarios.ai.sap.com/description: "Learning to predict house price"
+    scenarios.ai.sap.com/name: "House Price (Tutorial)"
+    executables.ai.sap.com/description: "Create online server to make live predictions"
+    executables.ai.sap.com/name: "server"
+    artifacts.ai.sap.com/housepricemodel.kind: "model" # Suggest the kind of artifact to input.
+  labels:
+    scenarios.ai.sap.com/id: "learning-datalines"
+    ai.sap.com/version: "1.0"
+spec:
+  inputs:
+    artifacts:
+      - name: housepricemodel # placeholder name, do not add `-` in value use only alphanumeric chars
+    parameters:
+      - name: greetmessage # placeholder name
+        type: string # required for every parameters
+  template:
+    apiVersion: "serving.kubeflow.org/v1beta1"
+    metadata:
+      annotations: |
+        autoscaling.knative.dev/metric: concurrency   # condition when to scale
+        autoscaling.knative.dev/target: 1
+        autoscaling.knative.dev/targetBurstCapacity: 0
+      labels: |
+        ai.sap.com/resourcePlan: starter # computing power
+    spec: |
+      predictor:
+        imagePullSecrets:
+          - name: credstutorialrepo   # your docker registry secret
+        minReplicas: 1
+        maxReplicas: 5    # how much to scale
+        containers:
+        - name: kfserving-container
+          image: "docker.io/<YOUR_DOCKER_USERNAME>/house-server:01"
+          ports:
+            - containerPort: 9001    # customizable port
+              protocol: TCP
+          command: ["/bin/sh", "-c"]
+          args:
+            - >
+              set -e && echo "Starting" && gunicorn --chdir /app/src main:app -b 0.0.0.0:9001 # filename `main` flask variable `app`
+          env:
+            - name: STORAGE_URI # Required
+              value: "{{inputs.artifacts.housepricemodel}}" # Required reference from artifact name, see above
+            - name: greetingmessage # different name to avoid confusion
+              value: "{{inputs.parameters.greetmessage}}"
