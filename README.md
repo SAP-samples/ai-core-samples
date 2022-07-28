@@ -1,5 +1,5 @@
 # ai-core-samples
-This repository contain sample notebooks and workflow templates that can enable the user to have a quick hands-on with SAP AI Core
+This repository contains sample notebooks and workflow templates that can enable the user to have a quick hands-on with SAP AI Core
 
 DISCLAIMER: The tutorials and notebooks contain sample codes and are only for enablement and not for Production usage.
 
@@ -16,6 +16,12 @@ https://developers.sap.com/group.ai-core-get-started-basics.html
 
 ## Content structure
 
+The sample notebooks and the worklow templates or yaml files are placed in the Tutorial Folder.
+The Tutorial folder has 2 main Folders.
+1.Create Your First Machine Learning Project using SAP AI core
+  This Tutorial has already been created by us in developers.sap.com (https://developers.sap.com/group.ai-core-get-started-basics.html)
+  The tutorial has been divided into 6 parts.Each part has a subfolder created.The notebook and the template for each of the parts are placed in the respective subfolders.
+  ![Link text e.g., Destination screen](./Tutorial/subfolder.png)
 ## License
 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-cap-risk-management)](https://api.reuse.software/info/github.com/SAP-samples/cloud-cap-risk-management)
