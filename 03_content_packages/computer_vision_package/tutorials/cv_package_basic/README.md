@@ -2,9 +2,6 @@
 
 Integrate the computer vision package with SAP AI Core, create an AI workflow to train an object detection model, and serve the model for number recognition of electricity meters.
 
-> Advanced (1 hr. 45 min.)
-> Tags: Artificial Intelligence, SAP AI Launchpad, Tutorial, Machine Learning, SAP AI Core, Advanced
-
 
 > **Time**: 1 hr. 45 mins   
 > **Level**: Advanced  
