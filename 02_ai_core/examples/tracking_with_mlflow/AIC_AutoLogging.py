@@ -1,6 +1,8 @@
 import mlflow
 import datetime
-from sapai import tracking
+from ai_core_sdk.tracking import Tracking
+from ai_core_sdk.models import Metric, MetricLabel
+        
 import os
 
 class TrackingContext(object):
@@ -25,17 +27,19 @@ class TrackingContext(object):
     the SAP AI Tracking SDK and are visualized in AI Launchpad.
 
     """
-
+    
+    class TrackingContext(object):
     def __init__(self, experiment_name="experiment"):
         self.ON_AIC = 'AICORE_EXECUTION_ID' in os.environ
         print("AICORE_EXECUTION_ID", self.ON_AIC)
+        if self.ON_AIC:
+            self.aic_connection = Tracking()
         self.experiment_name = experiment_name
         try:
             self.experiment_id = mlflow.create_experiment(self.experiment_name)
         except:
             current_experiment = dict(mlflow.get_experiment_by_name(self.experiment_name))
             self.experiment_id = current_experiment['experiment_id']
-
         cwd = os.getcwd()
         mlflow.set_tracking_uri(f"file:{cwd}/mlruns")
         self.context = mlflow.start_run()
@@ -46,9 +50,10 @@ class TrackingContext(object):
         metrics = []
         for k in data.metrics.keys():
             for m in client.get_metric_history(run_id, k):
-                date = datetime.datetime.fromtimestamp(m.timestamp/1000.).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
-                metrics.append([{'name': m.key, 'value':m.value,
-                    'timestamp': date, 'step': m.step,'labels':labels}])
+                date = datetime.datetime.fromtimestamp(m.timestamp/1000.)#.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+                #metrics.append([{'name': m.key, 'value':m.value,
+                #    'timestamp': date, 'step': m.step,'labels':labels}])
+                metrics.append(Metric(name=m.key, value=m.value, timestamp=date, step=m.step, labels=labels))
         return metrics
         
     def __enter__(self):
@@ -57,13 +62,14 @@ class TrackingContext(object):
 
     def __exit__(self, type, value, traceback):
         self.context.__exit__(type, value, traceback)
-        labels = [{'name':'experiment_name', 'value':self.experiment_name},
-                {'name':'experiment_id', 'value':self.experiment_id},
-                {'name':'run_id', 'value':self.context.info.run_id}]
+        # MetricLabel(name="metrics.ai.sap.com/Artifact.name", value="housepricemodel"
+        labels = [MetricLabel(name="Experiment Name:",value=self.experiment_name),
+                MetricLabel(name="experiment_id", value=self.experiment_id),
+                MetricLabel(name="run_id", value=self.context.info.run_id)]
 
         data = self.fetch_logged_data(self.context.info.run_id,labels)
-        
-        for el in data:
-            print(el)
-            if self.ON_AIC:
-                tracking.log_metrics(el)
+        if self.ON_AIC:
+            self.aic_connection.log_metrics(data)
+        else:
+            for el in data:
+                print(el)
