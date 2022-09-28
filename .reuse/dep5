@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: <YOUR-REPO-NAME>
-Upstream-Contact: <YOUR-CONTACT (MAIL ADDRESS ETC.)>
-Source: <https://github.com/sap-samples/YOUR-REPO-NAME>
+Upstream-Name: ai-core-samples
+Upstream-Contact: deepak.sahu01@sap.com
+Source: <https://github.com/sap-samples/ai-core-samples>
 Disclaimer: The code in this project may include calls to APIs ("API Calls") of
  SAP or third-party products or services developed outside of this project
  ("External Products").
@@ -24,14 +24,10 @@ Disclaimer: The code in this project may include calls to APIs ("API Calls") of
  you any rights to use or access any SAP External Product, or provide any third
  parties the right to use of access any SAP External Product, through API Calls.
 
-Files: <YOUR-FILE-OR-FOLDER-LIST>
-Copyright:  <YEARS-RELEVANT-FOR-YOUR-PROJECT> SAP SE or an SAP affiliate company and <YOUR-PROJECT-NAME> contributors
+Files: *.*
+Copyright:  2022 SAP SE or an SAP affiliate company and ai-core-samples contributors
 License: Apache-2.0
 
-Files: <THIRD-PARTY-FILE-OR-FOLDER-LIST>
-Copyright: <COPYRIGHT-OF-THIRD-PARTY-CODE>
-License: <LICENSE-OF-THIRD-PARTY-CODE>
-
-Files: <ANOTHER-THIRD-PARTY-FILE-OR-FOLDER-LIST>
-Copyright: <COPYRIGHT-OF-ANOTHER-THIRD-PARTY-CODE>
-License: <LICENSE-OF-ANOTHER- THIRD-PARTY-CODE>
+Files: 02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_03_build_a_house_price_predictor_with_sap_ai_core/step3-files/Dockerfile 02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_04_ingest_live_data_into_your_house_price_predictor_with_sap_ai_core/end-files/Dockerfile 02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_04_ingest_live_data_into_your_house_price_predictor_with_sap_ai_core/start-files/Dockerfile  02_ai_core/tutorials/01_create_your_first_machine_learning_project_using_sap_ai_core/01_05_make_predictions_for_house_prices_with_sap_ai_core/hello-aicore-serve/Dockerfile CODEOWNERS
+Copyright:  2022 SAP SE or an SAP affiliate company and ai-core-samples contributors
+License: Apache-2.0

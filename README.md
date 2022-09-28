@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ai-core-samples)](https://api.reuse.software/info/github.com/SAP-samples/ai-core-samples)
+
 # ai-core-samples
 This repository contains sample notebooks and workflow templates that can enable the user to have a quick hands-on with SAP AI Core
 
