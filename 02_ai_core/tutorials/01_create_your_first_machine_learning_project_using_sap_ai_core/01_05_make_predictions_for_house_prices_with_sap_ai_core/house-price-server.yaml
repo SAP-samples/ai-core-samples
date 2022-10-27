@@ -2,7 +2,7 @@ apiVersion: ai.sap.com/v1alpha1
 kind: ServingTemplate
 metadata:
   name: server-pipeline # executable ID, must be unique across your SAP AI Core instance, for example use `server-pipeline-yourname-1234`
-  annotations:  
+  annotations:
     scenarios.ai.sap.com/description: "Learning to predict house price"
     scenarios.ai.sap.com/name: "House Price (Tutorial)"
     executables.ai.sap.com/description: "Create online server to make live predictions"
@@ -19,7 +19,7 @@ spec:
       - name: greetmessage # placeholder name
         type: string # required for every parameters
   template:
-    apiVersion: "serving.kubeflow.org/v1beta1"
+    apiVersion: "serving.kserve.io/v1beta1"
     metadata:
       annotations: |
         autoscaling.knative.dev/metric: concurrency   # condition when to scale
