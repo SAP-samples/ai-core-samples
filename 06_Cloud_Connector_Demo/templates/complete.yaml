@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: aiw-cc-demo
+  labels:
+    scenarios.ai.sap.com/id: aiw-cc-demo
+    ai.sap.com/version: 1.0.0
+  annotations:
+    scenarios.ai.sap.com/name: "aiw-cc-demo"
+    executables.ai.sap.com/name: "aiw-cc-demo"
+spec:
+  entrypoint: connect
+
+  imagePullSecrets:
+    - name: cp-test-docker-registry
+
+  templates:
+  - name: connect
+    metadata:
+      labels:
+        ai.sap.com/resourcePlan: starter
+    container:
+      image: aiwdemos.common.repositories.cloud.sap/aiw-cc-demo:0.1
+      command: ["/bin/sh", "-c"]
+      args: ["python3 main.py"]
+      env:
+      - name: CP_TOKEN_SERVICE_URL
+        valueFrom:
+          secretKeyRef:
+            name: cp-service-key
+            key: token_service_url
+      - name: CP_CLIENT_ID
+        valueFrom:
+          secretKeyRef:
+            name: cp-service-key
+            key: clientid
+      - name: CP_CLIENT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: cp-service-key
+            key: clientsecret
