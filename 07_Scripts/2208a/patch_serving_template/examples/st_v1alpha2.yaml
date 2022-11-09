@@ -1,0 +1,51 @@
+apiVersion: ai.sap.com/v1alpha1
+kind: ServingTemplate
+metadata:
+  annotations:
+    executables.ai.sap.com/description: "Example ServingTemplate"
+    executables.ai.sap.com/name: "Example-ServingTemplate"
+    scenarios.ai.sap.com/description: "Example Scenario Description"
+    scenarios.ai.sap.com/name: "EXAMPLE-SCENARIO"
+  labels:
+    ai.sap.com/version: 0.0.1
+    scenarios.ai.sap.com/id: "example-scenario-serving"
+  name: example-scenario-serving
+spec:
+  inputs:
+    parameters:
+      - name: resourcePlan
+        default: "train.l"
+        type: string
+      - name: metric
+        default: "concurrency"
+        type: string
+      - name: target
+        default: "1"
+        type: string
+      - name: targetBurstCapacity
+        default: "0"
+        type: string
+    artifacts: []
+  imagePullSecrets:
+    - name: some-docker-registry
+  template:
+    apiVersion: "serving.kubeflow.org/v1alpha2"
+    metadata:
+      annotations: |
+        autoscaling.knative.dev/metric: "{{inputs.parameters.metric}}"
+        autoscaling.knative.dev/target: "{{inputs.parameters.target}}"
+        autoscaling.knative.dev/targetBurstCapacity: "{{inputs.parameters.targetBurstCapacity}}"
+      labels: |
+        ai.sap.com/resourcePlan: "{{inputs.parameters.resourcePlan}}"
+    spec: |
+      default:
+        predictor:
+          minReplicas: {{inputs.parameters.minReplicas}}
+          maxReplicas: {{inputs.parameters.maxReplicas}}
+          custom:
+            container:
+              name: kfserving-container
+              image: {{inputs.parameters.dockerRegistry}}/com.sap.example/example-serving:0.0.1
+              ports:
+                - containerPort: 8080
+                  protocol: TCP
