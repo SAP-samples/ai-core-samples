@@ -1,0 +1,29 @@
+{  
+    // aicore service setup - comes from aicore service instance on BTP subaccount
+    "base_url": "base-url-from-aicore-service-instance",
+    "auth_url": "auth-url-from-aicore-service-instance",
+    "client_id": "client-id-from-aicore-service-instance",
+    "client_secret": "client-secret-from-aicore-service-instance",
+    
+    // docker registry secret - docker config json to pull the demo image
+    "docker_secret": {".dockerconfigjson": "{\"auths\": {\"****\": {\"username\": \"****\", \"password\": \"****\"}}}"},
+    
+    // cloud connector demo github setup
+    "repo_url": "https://github.com/SAP-samples/ai-core-samples",
+    "git_user": "****",
+    "git_pass": "****",
+    "app_path": "06_Cloud_Connector_Demo/templates",
+    
+    // cloud connector setup - host and port for virtual service from cloud connector ui
+    "cc_host": "virtual-service-exposed-by-cloud-connector", // to be replaced with cloud connector virtual hostname
+    "cc_port": "5050", // to be replaced with cloud connector virtual port
+    
+    // connectivity proxy host in aicore
+    "cp_host": "http://connectivity-proxy.connectivity-proxy.svc.cluster.local:20003",
+    
+    // connectivity service setup - BTP service instance of type connectivity service with "connectivity_proxy" service plan
+    "cp_token_service_url": "token-service-url-from-connectivity-service-instance",
+    "cp_client_id": "client-id-from-connectivity-service-instance",
+    "cp_client_secret": "token-service-url-from-connectivity-service-instance"
+
+}
