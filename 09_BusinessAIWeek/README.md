@@ -476,13 +476,18 @@ Here we have created a template for the prompts. It contains two variables, 'con
 Now we can define a function ask_llm() that queries a model using the above template. 
 
 ```PYTHON
+!pip install tiktoken
+import tiktoken
 from gen_ai_hub.proxy.langchain.openai import ChatOpenAI
 
 def ask_llm(query: str, metric='COSINE_SIMILARITY', k = 4) -> str:
     context = ''
     context = run_vector_search(query, metric, k)
     prompt = promptTemplate.format(query=query, context=' '.join(str(context)))
-    llm = ChatOpenAI(proxy_model_name='gpt-4')
+    encoding = tiktoken.get_encoding("cl100k_base")
+    num_tokens = len(encoding.encode(str(prompt)))
+    print('no of tokens'+ str(num_tokens))
+    llm = ChatOpenAI(proxy_model_name='gpt-4-32k',max_tokens = 8000)
     response = llm.invoke(prompt).content
     print('Query: '+ query)
     print('\nResponse:')
