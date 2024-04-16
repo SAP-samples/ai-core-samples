@@ -498,7 +498,7 @@ def ask_llm(query: str, metric='COSINE_SIMILARITY', k = 4) -> str:
 
 The above function appends the query and context into the template to create a prompt. Then that prompt is passed on to the LLM model and the response is printed.
 
-Here we are using gpt-4 model. Make sure that you have already created a deployment for the gpt-4 model in AI Launchpad.
+Here we are using gpt-4-32k model. Make sure that you have already created a deployment for the gpt-4-32K model in AI Launchpad.
 
 We can compare how the output produced by RAG is different from the output when we directly pass the prompt to the model. If we directly pass the prompt to the model withouth RAG, this will be the output. 
 
