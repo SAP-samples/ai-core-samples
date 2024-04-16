@@ -1,7 +1,5 @@
 # Business AI week
 
-In this workshop we are going to try out a RAG scenario where we will deploy an app that accepts a PDF via API from user and stores it to a Hana DB as embedings and answers the querries asked by the user.
-
 ## Pre-requisite
 - Access to AI core and lauchpad with SAP Extended Plan
 - Hana DB with Vector store enabled
