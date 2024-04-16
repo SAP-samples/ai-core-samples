@@ -315,6 +315,10 @@ Now use the following command to open config.json file in nano.
 nano ~/.aicore/config.json
 ```
 
+For Windows, you can use your User Directory in the terminal and create the same folder in the following structure
+
+<img width="360" alt="MicrosoftTeams-image (2)" src="https://github.com/SAP-samples/ai-core-samples/assets/25814581/f52b0d32-443e-46e9-a759-382b5b91f1b4">
+
 Now paste the following json script on config.json file.
 
 ```JSON
@@ -327,6 +331,7 @@ Now paste the following json script on config.json file.
 }
 ```
 
+Please update the above values with the Service keys of AI core provided to you in the above landscape documentation.
 
 ### 9. **Open the Jupyter notebook** 
    
