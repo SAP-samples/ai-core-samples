@@ -3,9 +3,6 @@
 ## Pre-requisite
 - Access to AI core and lauchpad with SAP Extended Plan
 - Hana DB with Vector store enabled
-- CF
-- Users should be mapped to their own CF spaces with space developer role
-- HANA Cloud instance should be mapped to all CF spaces
 - HANA credentials(individual users for each training user), AI Core credentials and Reddit credentials needs to be given to users during training
 
 ## Utilizing RAG Embeddings for Enhanced Developer Support
