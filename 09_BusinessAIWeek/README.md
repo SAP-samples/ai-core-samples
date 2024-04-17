@@ -343,9 +343,7 @@ write the below command (if you are using jupyter lab)
 jupyter lab
 ```
 
-You can use the following [notebook](workshop_notebook.ipynb) to complete this task.
-
-If you are not using the existing notebook, you can create a new notebook in jupyter notebook and copy the following code snippets.
+create a new notebook in jupyter notebook and copy the following code snippets.
 
 To upload your csv file, click on the upload button in jupyter notebook and select the csv file (GRAPH_DOCU_2503.csv) that you downloaded.
 
@@ -907,9 +905,6 @@ response
 ```
 <img width="785" alt="image" src="https://media.github.tools.sap/user/29916/files/39cb6771-6416-41f2-8c77-2d3a71f56455">
 
-You can use the app we pushed to cf to do RAG using reddit data.
-
-Copy the contents from reddit to a text file and upload it in the application.
 
 **Outcome:** Through the integration of live Reddit data, Bob enhances the model's ability to provide up-to-date and relevant support to developers. By leveraging real-time insights and solutions shared by the community, the help portal powered by embeddings becomes even more valuable, addressing developers' queries with greater accuracy and efficiency.
 
