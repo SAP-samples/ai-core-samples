@@ -666,16 +666,6 @@ You can connect to reddit using their api to use their data for retrieval augmen
 
 Connect to the reddit api using your credentials.
 
-If you don't have your own reddit-api, you can use the following keys.
-
-CLIENT_ID = "RgqhQFaqxivVv2pBZ3jdYQ"
-
-SECRET_KEY = "pa7uK32LA-6ssF5Eaz7GDRxzsLurKw"
-
-username = "abhijithbabusap"
-
-password = "Workshop!234"
-
 ```PYTHON
 CLIENT_ID = "<your-client-id>"
 SECRET_KEY = "<your-secret-key>"
