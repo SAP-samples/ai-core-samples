@@ -295,7 +295,7 @@ For Windows, you can use your User Directory in the terminal and create the same
 
 <img width="360" alt="MicrosoftTeams-image (2)" src="https://github.com/SAP-samples/ai-core-samples/assets/25814581/f52b0d32-443e-46e9-a759-382b5b91f1b4">
 
-Now paste the following json script on config.json file.
+Now paste the following json script on config.json file. or Download the sample json from [Json file](files/config.json)
 
 ```JSON
 {
