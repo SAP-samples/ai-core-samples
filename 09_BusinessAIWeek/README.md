@@ -11,29 +11,10 @@ Bob is a Content  developer in the XYZ company. His team works on a node library
 
 Bob uses the Generative AI Hub SDK to create a help portal for his library. He wants to Improve the effectiveness of our help portal by integrating RAG (Retrieval-Augmented Generation) embeddings so that Developers can receive more contextually relevant responses to their queries about the node library. 
 
-Acceptance criteria: 
+### Workflow 1
 
-- Bob utilizes the Generative AI Hub SDK to integrate a generative AI model into the help portal for the company's node library. 
+![2024-04-18_15-10-17](https://github.com/SAP-samples/ai-core-samples/assets/25814581/6184a7ae-ab08-478d-8037-72efea206d90)
 
-- Bob configures and deploys the generative AI model within the AI core instance of the company's infrastructure. 
-
-- The help portal powered by Generative AI should provide intuitive and contextually relevant responses to developers' inquiries about using the node library. 
-
-- The generative AI model is trained on the documentation of the node library to ensure accurate and informative responses. 
-
-- The help portal interface is user-friendly, allowing developers to easily interact with the generative AI model and find answers to their questions. 
-
-- Bob monitors the performance of the generative AI model regularly, ensuring that it continues to provide accurate and helpful responses to developers' queries. 
-
-- Bob documents the process of integrating the Generative AI Help Portal into the company's support workflow, providing clear instructions for future maintenance and updates. 
-
-- Bob Queries the model 
-
-- Implements RAG embeddings 
-
-- Enhances Query responses 
-
-- Bob conducts training sessions or provides documentation to the support team, educating them on how to leverage the Generative AI Help Portal effectively to assist developers. 
 
 ### Setting up LLM's on AI core
 
@@ -640,6 +621,8 @@ response
 ![image](images/red6.png)
 
 ## Using data from reddit for Retrieval Augmented Generation
+
+## Workflow 2
 
 ![image](images/RAG2.png)
 
