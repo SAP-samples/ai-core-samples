@@ -328,6 +328,26 @@ Now paste the following json script on config.json file.
 
 Please update the above values with the Service keys of AI core provided to you in the above landscape documentation.
 
+#### An alternative way to config.json to set the environment variables for gen-ai-hub-sdk
+you can run this as the first code in Jupyter notebook check step 9 to learn on how to start/run Jupyter Notebook
+
+```PYTHON
+import os
+
+# please enter the Credentials from your AI core landscape.
+env_vars = {
+    'AICORE_AUTH_URL' : '<auth_url>',
+    'AICORE_CLIENT_ID' : '<client_id>',
+    'AICORE_CLIENT_SECRET' : '<client_secret>',
+    'AICORE_BASE_URL' : '<api_url>/v2',
+    'AICORE_RESOURCE_GROUP' : '<resource_group>',
+}
+
+# Set the environment variables using `os.environ`.
+for key, value in env_vars.items():
+    os.environ[key] = value
+```
+    
 ### 9. **Open the Jupyter notebook** 
    
 write the command (if you are using jupyter)
