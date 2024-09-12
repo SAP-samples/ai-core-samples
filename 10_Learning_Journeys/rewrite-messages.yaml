@@ -1,0 +1,112 @@
+assign-labels:
+  - role: system
+    content: Your are senior consultant at a prestigious agency, and you are responsible for evaluating the work of other employees. Your task is to assess if support tickets where classified correctly.
+  - role: user
+    content: |
+      Giving the following message:
+      ---
+      {message}
+      ---
+      Assign the message to only the best matching categories of the following support categories:
+
+      {categories}
+
+      For every category decide if it is a matching label for the message.
+
+      Also judge on the urgency:
+
+      {urgency_description}
+
+      Be critical and don't give a match a category unless the label clearly matches. It is not desired to have as many matches as possible but to have the correct matches.
+
+rewrite-message:
+  - role: system
+    content: Your are senior trainer for support centers. You are working a course for which fictional support inqueries are needed. A junior colleague drafted some message and your task is to review and rewrite them if needed. Your responses should either be "<ACCEPT>"" or the rewritten message. No explanations are needed.
+  - role: user
+    content: |
+      The fictional company is:
+      <company>
+      {company}
+      </company>
+      The email should be tailored to the persona's sentiment, and urgency:
+      <persona>
+      {persona}
+      </persona>
+      <sentiment>
+      {sentiment}
+      </sentiment>
+      The message should also be assigned to a set of categories:
+      <categories-assigned>
+      {categories_assigned_full}
+      </categories-assigned>
+      Try to make the assigned categories clear in the message. The following labels should not be:
+      <categories-do-avoid>
+      {categories_avoided_full}
+      </categories-do-avoid>
+      Also make sure that the urgency is clear from the message. The message should reflect:
+      <urgency-assigned>
+      {urgency_assigned_full}
+      </urgency-assigend>
+      and should not reflect:
+      <urgency-avoided>
+      {urgency_avoided_full}
+      </urgency-avoided>
+      Rewrite the message if needed:
+      <message>
+      {message}
+      </message>
+      as needed and remember to avoid the categories: {categories_avoided} that should not be in the message and to include the categories: {categories_assigned} that should be in the message. Also match the urgency: {urgency_assigned}. Try to make the label assignment not to obvious, only use the exact name of the category if it really fits into the message. Return <ACCEPT> or the rewritten message.
+quality_rating:
+  - role: system
+    content: |
+       You are a senior manager at a prestigious agency, and you are responsible for evaluating the work of other employees. Your task is to assess if support tickets where classified correctly.
+
+       Your employees assigned the support requests with the following categories:
+       - categories
+       - urgency
+       - sentiment
+       - persona
+  - role: user
+    content:
+    - type: text
+      text: |
+        Given the following message:
+        <message>
+        {message}
+        </message>
+        Rate how well the given message matches the assigned labels:
+        <persona>
+        {persona}
+        </persona>
+        <sentiment>
+        {sentiment}
+        </sentiment>
+        A good message has low abiguity reflects the following categories:
+        <categories-assigned>
+        {categories_assigned_full}
+        </categories-assigned>
+        while avoiding:
+        <categories-do-avoid>
+        {categories_avoided_full}
+        </categories-do-avoid>
+        Same goes for the urgency of the message. It should reflect:
+        <urgency-assigned>
+        {urgency_assigned_full}
+        </urgency-assigend>
+        and should not reflect:
+        <urgency-avoided>
+        {urgency_avoided_full}
+        </urgency-avoided>
+
+        Judge every label  from:
+        - very low
+        - low
+        - medium
+        - high
+        - very high
+        Be critical and don't give a perfect score unless if matches:
+        - `persona`: {persona}
+        - `sentiment`: {sentiment}
+        - `urgency`: {urgency_assigned}
+        - `categories`: {categories_assigned}
+        perfectly.

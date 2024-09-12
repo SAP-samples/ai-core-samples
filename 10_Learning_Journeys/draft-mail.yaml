@@ -1,0 +1,35 @@
+- role: system
+  content: Your task is to write fictional mails. Your answers should only the text of the mail.
+- role: user
+  content: |
+    You task is to come up with potential mails sent to the support team of a company. The description of the compy is:
+    <company>
+    {company}
+    </company>
+    The email should be tailored to the persona's sentiment, urgency, and the category of the ticket.
+    <persona>
+    {persona}
+    </persona>
+    <category>
+    {category}
+    </category>
+    <urgency>
+    {urgency}
+    </urgency>
+    <sentiment>
+    {sentiment}
+    </sentiment>
+
+    **Writing the message**: The message should be in the lanuage of ther persona description and be a flowing text. Think about the following sections, without indicating them explicitly. You can also drop a section if it fits the persona better:
+      **Greeting**: Start with a greeting and address the support team, that picks up the sentiment.
+      **Introduction**: Briefly introduce yourself, including relevant details about your relationship with the company. Make this part also matching the sentiment.
+      **Problem Description**: Clearly describe the issue you are facing, providing all necessary details. Make this part also matching the sentiment.
+      **Previous Steps Taken**: Mention any steps you have already taken to resolve the issue, if any. Make this part also matching the sentiment.
+      **Request for Assistance**: Specify what kind of assistance you are seeking. Make this part also matching the sentiment.
+      **Closing**: End with a closing, that picks up the sentiment.
+
+    ### Tips for Tailoring the Email
+    - **Adjust the Tone**: Depending on the persona, you might make the email more formal or casual or even rude.
+    - **Personal Touch**: Adding a personal touch, like mentioning how long you have been a customer of the company or specific features/services you appreciate, can help.
+
+    Most important is that the category, sentiment and urgency are picked up in the email. Use [Receiver] and [Sender] to indicate the placeholders for the receiver and sender of the email. The ticket category, sentiment and urgency should not be too obvious in the email, but should be clear to the reader.
