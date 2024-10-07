@@ -1,4 +1,4 @@
-# facility-management-example
+# Solving Your Business Problems Using Prompts and LLMs in SAP's Generative AI Hub
 This [repository](https://github.com/SAP-samples/ai-core-samples/tree/main/10_Learning_Journeys) is prepared to provide examples for the specific enablement: "Solving your business problems using prompts and LLMs in SAP Generative AI Hub.
 
 **Please Download the entire repository before you execute the notebook.
