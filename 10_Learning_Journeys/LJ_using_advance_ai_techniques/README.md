@@ -8,7 +8,10 @@ Please make sure that the <key.json> or <whatever name> your ai-core service key
 Make sure that the config.json is inside the 10_learning_journeys folder in the downloaded repository**
 ### Files
 
+- `using_advanced_ai_techniques_with_sap_generative_ai_hub.ipynb` - Jupyter notebook for grounding
 - `Prompt for emails generation.docx`: This fle contains the prompt to create the emails and generated emails. Generated emails can be used to create grounding data repository.
+- `customer_emails_for_grounding` - folder contains email files required for grounding. You can upload these email files to supported data repository and run the data pipeline to generate the embeddings and store the data into the vector DB.
+
 
 # Grounding pre-requisite:
 
