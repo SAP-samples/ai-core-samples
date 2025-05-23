@@ -1,0 +1,12 @@
+{
+    "serviceurls": {
+      "AI_API_URL": "https://api.ai.prod.eu-central-1.aws.ml.hana.ondemand.com"
+     },
+    "appname": "adcd4907-f1a7-462d-ba8e-646390ee4185!b398425|aicore!b540",
+    "clientid": "sb-adcd4907-f1a7-462d-ba8e-646390ee4185!b398425|aicore!b540",
+     "clientsecret": "107d3e9b-9a41-4b30-9b24-a091a45956cd$VmYxjzammFm50xkj1O37HmzgX3maoNrwfrlm99qUhi0=",
+    "identityzone": "anuragv2-39wjy902",
+    "identityzoneid": "d81dc917-bdb7-41c4-ab2a-cce93f2cf866",
+    "url": "https://anuragv2-39wjy902.authentication.eu10.hana.ondemand.com",
+    "AI-Resource-Group": "llm-deployed"
+    }
