@@ -1,0 +1,12 @@
+{
+  "serviceurls": {
+    "AI_API_URL": "https://api.ai.prodeuonly.eu-central-1.aws.ml.hana.ondemand.com"
+  },
+  "appname": "49ec08a9-d325-4480-9418-ad8801558203!b28574|aicore!b18",
+  "clientid": "sb-49ec08a9-d325-4480-9418-ad8801558203!b28574|aicore!b18",
+  "clientsecret": "96d2ba69-3289-4190-ad82-c174e50f9f17$8C_adlgCYD6AscPgIKtLXJkIj1AL6i8p9Opw1JJZ0o8=",
+  "identityzone": "israel-fsvdxbsq",
+  "identityzoneid": "24f0ff13-74e1-4d3a-9b4c-17536e62ad78",
+  "url": "https://israel-fsvdxbsq.authentication.eu11.hana.ondemand.com",
+  "credential-type": "binding-secret"
+}
