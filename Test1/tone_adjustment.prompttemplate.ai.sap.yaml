@@ -1,0 +1,16 @@
+name: tone_adjustment
+version: 1.1.1
+scenario: tone-adjustment-task
+spec:
+  template:
+    - role: "system"
+      content: |
+        Translate the following input to a Corporate language.
+        Respond in the following format:
+        Corporate Version: {{ corporate_output }}
+    - role: "user"
+      content: "Text: {{ ?input_text }}"
+  additionalFields:
+    isDev: true
+    validations:
+      required: true

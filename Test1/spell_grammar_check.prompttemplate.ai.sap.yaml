@@ -1,0 +1,16 @@
+name: spell-check
+version: 1.1.1
+scenario: spell-check-processing
+spec:
+  template:
+    - role: "system"
+      content: "Correct any spelling and grammatical errors in the given text. Corrected Text: {{ corrected_output }}"
+    - role: "user"
+      content: "{{ ?input_text }}"
+  defaults:
+    input_text: "default input text"
+
+  additionalFields:
+    isDev: true
+    validations:
+      required: true

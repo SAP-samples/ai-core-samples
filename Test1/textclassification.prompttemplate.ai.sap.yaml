@@ -1,0 +1,16 @@
+name: text_classification
+version: 1.1.1
+scenario: text-classification-task
+spec:
+  template:
+    - role: "system"
+      content: |
+        Classify the sentiment of the given text.
+        Respond in the following format:
+        Sentiment: {{ classification_output }}
+    - role: "user"
+      content: "Text: {{ ?input_text }}"
+  additionalFields:
+    isDev: true
+    validations:
+      required: true
